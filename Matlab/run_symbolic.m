@@ -56,7 +56,7 @@ for i = 1:n
 end
 
 % Passing only the Jacobian corresponding to end effector
-Jpn = Jp(:,:,n); 
+Jpn = Jp(:,:,end); 
 
 matlabFunction(Jpn,'File',[path,'get_Jp'],'Vars',{q});
 
@@ -70,12 +70,12 @@ for i = 2:n
 end
 
 % Passing only the Jacobian corresponding to end effector
-Jon = Jo(:,:,n);  
+Jon = Jo(:,:,end);  
 
 matlabFunction(Jon,'File',[path,'get_Jo'],'Vars',{q});
 
 %% Geometric Jacobian - Jn
-Jn = [Jp(:,:,n); Jo(:,:,n)]; 
+Jn = [Jp(:,:,end); Jo(:,:,end)]; 
 
 matlabFunction(Jn,'File',[path,'get_0Jn'],'Vars',{q});  
 
