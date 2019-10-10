@@ -10,9 +10,8 @@ clear; close all; clc;
 manipulator = 'RR';
 
 %% Adding manipulator folder paths
-path_to_rm = genpath('/home/sapanostic/Projects/Manipulators/Matlab/');
-rmpath(path_to_rm);
-path_to_add = genpath(['/home/sapanostic/Projects/Manipulators/Matlab/',manipulator]);
+currentPath = pwd;
+path_to_add = genpath([currentPath, '\', manipulator]);
 addpath(path_to_add);
 
 % Loading manipulator constants
